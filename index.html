@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lyra Jane Sapungan — Bookkeeper &amp; Payroll Specialist</title>
+<meta name="description" content="Xero Certified Professional and QuickBooks Certified bookkeeper specializing in payroll data recording, bank reconciliation, and automation." />
+<meta property="og:title" content="Lyra Jane Sapungan — Bookkeeper & Payroll Specialist" />
+<meta property="og:description" content="Xero Certified Professional and QuickBooks Certified bookkeeper specializing in payroll data recording, bank reconciliation, and automation." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/headshot.webp" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0B2540;
+    --ink-soft:#3C5068;
+    --bg:#FAFAF8;
+    --bg-alt:#F1EEE6;
+    --surface:#FFFFFF;
+    --border:#E2DED2;
+    --accent:#1D9E75;
+    --accent-deep:#0F6E56;
+    --accent-tint:#E1F5EE;
+    --mono:'JetBrains Mono', monospace;
+    --serif:'Fraunces', serif;
+    --sans:'Inter', sans-serif;
+    --shadow: 0 1px 2px rgba(11,37,64,0.04), 0 8px 24px rgba(11,37,64,0.06);
+    --radius: 14px;
+  }
+
+  html[data-theme="dark"]{
+    --ink:#F2F2ED;
+    --ink-soft:#A9AFB8;
+    --bg:#0A0E14;
+    --bg-alt:#10151D;
+    --surface:#131923;
+    --border:#232B37;
+    --accent:#3FCB9B;
+    --accent-deep:#5DCAA5;
+    --accent-tint:#132A24;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 30px rgba(0,0,0,0.35);
+    color-scheme: dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; color-scheme: light; }
+  html[data-theme="dark"]{ color-scheme: dark; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    transition: background .35s ease, color .35s ease;
+  }
+
+  /* ---------- Section background treatments ---------- */
+  .bg-dotgrid{
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: -8px -8px;
+  }
+  .bg-diagonal{
+    background-color: var(--bg-alt);
+    background-image: repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 4%, transparent) 0px, color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px, transparent 15px);
+  }
+  html[data-theme="dark"] .bg-diagonal{
+    background-image: repeating-linear-gradient(135deg, color-mix(in srgb, #fff 5%, transparent) 0px, color-mix(in srgb, #fff 5%, transparent) 1px, transparent 1px, transparent 15px);
+  }
+  .bg-gradient-soft{
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  }
+  .bg-dark-glow{
+    background: var(--ink);
+    position:relative;
+    overflow:hidden;
+  }
+  html[data-theme="dark"] .bg-dark-glow{ background: var(--bg-alt); }
+  .bg-dark-glow::before{
+    content:"";
+    position:absolute; top:-120px; right:-100px;
+    width:340px; height:340px; border-radius:50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 38%, transparent), transparent 70%);
+    pointer-events:none;
+  }
+  .bg-dark-glow::after{
+    content:"";
+    position:absolute; bottom:-140px; left:-80px;
+    width:280px; height:280px; border-radius:50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+    pointer-events:none;
+  }
+  .bg-dark-glow > *{ position:relative; z-index:1; }
+
+  /* ---------- Cursor-following glow ---------- */
+  .cursor-glow-zone{ position:relative; }
+  .cursor-glow{
+    position:absolute;
+    top:0; left:0;
+    width:280px; height:280px;
+    border-radius:50%;
+    pointer-events:none;
+    background: radial-gradient(circle, rgba(29,158,117,0.35) 0%, rgba(29,158,117,0.12) 40%, rgba(29,158,117,0) 72%);
+    opacity:0;
+    transition: opacity .3s ease;
+    z-index:0;
+    will-change: transform;
+  }
+  html[data-theme="dark"] .cursor-glow{
+    background: radial-gradient(circle, rgba(63,203,155,0.45) 0%, rgba(63,203,155,0.15) 40%, rgba(63,203,155,0) 72%);
+    width:300px; height:300px;
+  }
+  .cursor-glow-zone:hover .cursor-glow{ opacity:1; }
+  @media (hover: none){
+    .cursor-glow{ display:none; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cursor-glow{ display:none; }
+  }
+
+  .on-dark{ --ink: #F2F2ED; --ink-soft:#A9AFB8; --border: #2A3340; }
+  .on-dark .kicker{ color: var(--accent, #3FCB9B); }
+  html[data-theme="dark"] .on-dark{ --border: #2E3947; }
+
+  .panel{
+    padding: 72px 0;
+  }
+  .panel-inset{
+    border-radius: 28px;
+    padding: 64px 40px;
+    margin: 0;
+  }
+
+  @media (max-width: 640px){
+    .panel{ padding: 48px 0; }
+    .panel-inset{ padding: 40px 22px; border-radius:20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  ::selection{ background:var(--accent-tint); color:var(--accent-deep); }
+
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- 3D monogram (image-based) ---------- */
+  .monogram-scene{
+    perspective: 900px;
+    width: 110px; height: 110px;
+    margin: 0 auto 28px;
+    animation: monogram-float 4s ease-in-out infinite;
+  }
+  .monogram-cube{
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .1s linear;
+    filter: drop-shadow(0 12px 24px rgba(29,158,117,0.25));
+  }
+  .monogram-cube img{
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  @keyframes monogram-float{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-8px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .monogram-scene{ animation:none; }
+  }
+  .ledger-rule{
+    position:relative;
+    height:1px;
+    background:var(--border);
+    margin: 64px 0;
+  }
+  .ledger-rule::before, .ledger-rule::after{
+    content:"";
+    position:absolute; top:-3px;
+    width:1px; height:7px;
+    background:var(--border);
+  }
+  .ledger-rule::before{ left:0; }
+  .ledger-rule::after{ right:0; }
+
+  /* ---------- Header / Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{
+    font-family:var(--serif); font-weight:500; font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .brand .dot{ color:var(--accent); }
+  .nav-links{
+    display:flex; align-items:center; gap:32px;
+    font-size:14px; color:var(--ink-soft);
+  }
+  .nav-links a{ transition:color .2s ease; }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+
+  .theme-toggle{
+    width:40px; height:40px;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    color:var(--ink);
+    transition: border-color .2s ease, transform .15s ease;
+  }
+  .theme-toggle:hover{ border-color:var(--accent); }
+  .theme-toggle:active{ transform:scale(0.94); }
+  .theme-toggle svg{ width:18px; height:18px; }
+  .theme-toggle .sun{ display:none; }
+  html[data-theme="dark"] .theme-toggle .moon{ display:none; }
+  html[data-theme="dark"] .theme-toggle .sun{ display:block; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px;
+    border-radius:999px;
+    font-size:14px; font-weight:500;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition: transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn-primary{ background:var(--ink); color:var(--bg); }
+  html[data-theme="dark"] .btn-primary{ background:var(--accent); color:#08130F; }
+  .btn-primary:hover{ transform:translateY(-1px); }
+  .btn-ghost{ border-color:var(--border); color:var(--ink); }
+  .btn-ghost:hover{ border-color:var(--accent); }
+
+  @media (max-width: 860px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:0 0 56px;
+  }
+
+  .hero-centered{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding: 0 0 40px;
+  }
+  .hero-centered h1{ max-width:760px; }
+  .hero-sub-centered{ margin-left:auto; margin-right:auto; }
+  .hero-cta-centered{ justify-content:center; }
+  .hero-tags-centered{ justify-content:center; }
+
+  .monogram-scene-lg{
+    width: 420px; height: 420px;
+    margin: 0 auto 16px;
+  }
+  @media (max-width: 640px){
+    .monogram-scene-lg{ width:260px; height:260px; margin-bottom:12px; }
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em;
+    color:var(--accent-deep);
+    background:var(--accent-tint);
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .eyebrow .pulse{
+    width:6px; height:6px; border-radius:50%; background:var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
+
+  h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(38px, 5vw, 58px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  h1 em{
+    font-style:italic; font-weight:400; color:var(--accent-deep);
+  }
+
+  .hero-sub{
+    font-size:17px; line-height:1.65;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin:0 0 32px;
+  }
+
+  .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px; }
+
+  .hero-tags{ display:flex; gap:10px; flex-wrap:wrap; }
+  .tag{
+    font-size:12.5px; font-family:var(--mono);
+    padding:6px 12px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    color:var(--ink-soft);
+  }
+
+  .hero-photo-wrap{
+    position:relative;
+    perspective: 1000px;
+  }
+  .hero-photo{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    aspect-ratio: 4/5;
+    background:var(--ink);
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+    transform-style: preserve-3d;
+    transition: transform .1s ease-out;
+    will-change: transform;
+  }
+  .hero-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+    display:block;
+  }
+  .float-card{
+    position:absolute;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:12px 16px;
+    box-shadow:var(--shadow);
+    font-family:var(--mono);
+  }
+  .float-card.fc1{
+    bottom:-22px; left:-28px;
+    animation: float 5s ease-in-out infinite;
+  }
+  .float-card.fc2{
+    top:20px; right:-22px;
+    animation: float 6s ease-in-out infinite 1s;
+  }
+  @keyframes float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+  }
+  .fc-label{ font-size:10.5px; color:var(--ink-soft); letter-spacing:.03em; }
+  .fc-value{ font-size:18px; font-weight:500; color:var(--ink); }
+  .fc-value .unit{ font-size:12px; color:var(--accent-deep); }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-photo-wrap{ max-width:320px; margin:0 auto; order:-1; }
+    .float-card{ display:none; }
+  }
+
+  /* ---------- About section (premium editorial composition) ---------- */
+  .about-section{
+    display:grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap:16px;
+    align-items:center;
+    position:relative;
+  }
+  .about-photo-wrap{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    isolation:isolate;
+    padding-top:40px;
+  }
+  /* Atmospheric glow layer behind the subject */
+  .about-photo-wrap::before{
+    content:"";
+    position:absolute;
+    top:2%;
+    left:50%;
+    transform:translateX(-50%);
+    width:62%;
+    aspect-ratio:1/1;
+    border-radius:50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 14%, transparent) 0%, transparent 70%);
+    filter: blur(4px);
+    z-index:-1;
+    animation: about-glow-pulse 6s ease-in-out infinite;
+  }
+  html[data-theme="dark"] .about-photo-wrap::before{
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 68%);
+  }
+  @keyframes about-glow-pulse{
+    0%,100%{ opacity:0.7; transform:translateX(-50%) scale(1); }
+    50%{ opacity:1; transform:translateX(-50%) scale(1.06); }
+  }
+  /* Ledger-tick accent ring, echoes the site's ledger motif */
+  .about-photo-wrap::after{
+    content:"";
+    position:absolute;
+    bottom:2%;
+    left:50%;
+    transform:translateX(-50%);
+    width:64%;
+    height:28px;
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--ink) 22%, transparent) 0%, transparent 75%);
+    z-index:0;
+    border-radius:50%;
+  }
+  html[data-theme="dark"] .about-photo-wrap::after{
+    background: radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%);
+  }
+  .about-photo{
+    position:relative;
+    max-width:420px;
+    width:100%;
+    z-index:1;
+    animation: about-float 5s ease-in-out infinite;
+  }
+  .about-photo img{
+    width:100%;
+    display:block;
+    filter: drop-shadow(0 28px 36px rgba(11,37,64,0.22));
+    transition: transform .4s ease, filter .4s ease;
+  }
+  html[data-theme="dark"] .about-photo img{
+    filter: drop-shadow(0 28px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 50px rgba(63,203,155,0.14));
+  }
+  .about-photo:hover img{ transform: translateY(-6px) scale(1.015); }
+  @keyframes about-float{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-10px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .about-photo, .about-photo-wrap::before{ animation:none; }
+  }
+
+  /* Accent chip row above the name, mirrors the hero's eyebrow language */
+  .about-copy{ position:relative; z-index:1; }
+  .about-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.04em;
+    color:var(--accent-deep);
+    margin-bottom:14px;
+  }
+  .about-eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--accent-deep);
+  }
+  .about-copy h2{
+    margin-bottom:20px;
+    font-size:clamp(30px, 3.6vw, 42px);
+  }
+  .about-copy .section-desc + .section-desc{ margin-top:14px; }
+  .about-signoff{
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .about-signoff-mark{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:22px;
+    color:var(--accent-deep);
+  }
+  .about-signoff-role{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.03em;
+  }
+
+  @media (max-width: 860px){
+    .about-section{ grid-template-columns:1fr; text-align:center; gap:8px; min-height:auto; }
+    .about-copy p{ margin-left:auto; margin-right:auto; }
+    .about-photo{ max-width:280px; }
+    .about-eyebrow{ justify-content:center; }
+    .about-eyebrow::before{ display:none; }
+    .about-signoff{ justify-content:center; }
+  }
+
+  /* ---------- Stats bar ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--surface);
+  }
+  .stat{
+    padding:26px 22px;
+    border-right:1px solid var(--border);
+  }
+  .stat:last-child{ border-right:none; }
+  .stat-num{
+    font-family:var(--mono); font-size:26px; font-weight:500;
+    color:var(--accent-deep);
+    margin-bottom:4px;
+  }
+  .stat-label{ font-size:13px; color:var(--ink-soft); line-height:1.4; }
+
+  @media (max-width: 720px){
+    .stats{ grid-template-columns:repeat(2,1fr); }
+    .stat{ border-bottom:1px solid var(--border); }
+    .stat:nth-child(2n){ border-right:none; }
+  }
+
+  /* ---------- Section shared ---------- */
+  section{ padding:8px 0; }
+  .section-head{ margin-bottom:40px; }
+  .kicker{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--accent-deep); margin-bottom:10px;
+  }
+  h2{
+    font-family:var(--serif); font-weight:500;
+    font-size:clamp(26px,3vw,34px);
+    letter-spacing:-0.01em;
+    margin:0 0 10px;
+  }
+  .section-desc{ color:var(--ink-soft); font-size:15px; max-width:560px; line-height:1.6; }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .service-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px 24px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .service-card:hover{ border-color:var(--accent); transform:translateY(-3px); }
+  .service-icon{
+    width:40px; height:40px;
+    border-radius:10px;
+    background:var(--accent-tint);
+    color:var(--accent-deep);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .service-icon svg{ width:20px; height:20px; }
+  .service-card h3{
+    font-size:16.5px; font-weight:600; margin:0 0 8px;
+  }
+  .service-card p{
+    font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;
+  }
+
+  @media (max-width: 860px){
+    .services-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Project / Case study ---------- */
+  .case{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:44px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:44px;
+    align-items:center;
+  }
+  .case-copy .kicker{ margin-bottom:14px; }
+  .case h3{
+    font-family:var(--serif); font-weight:500; font-size:24px;
+    margin:0 0 14px; letter-spacing:-0.01em;
+  }
+  .case p{ color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0 0 20px; }
+  .case-list{ list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:10px; }
+  .case-list li{
+    font-size:14px; color:var(--ink);
+    display:flex; align-items:flex-start; gap:10px;
+  }
+  .case-list svg{ width:16px; height:16px; flex-shrink:0; margin-top:3px; color:var(--accent-deep); }
+
+  .case-visual{
+    background:var(--bg-alt);
+    border-radius:14px;
+    padding:24px;
+    border:1px solid var(--border);
+    will-change: transform;
+  }
+  .case{ perspective: 1200px; }
+  .flow-row{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:12px;
+    margin-bottom:14px;
+  }
+  .flow-chip{
+    padding:8px 12px; border-radius:8px;
+    background:var(--surface); border:1px solid var(--border);
+    flex:1; text-align:center; color:var(--ink-soft);
+  }
+  .flow-chip.active{ border-color:var(--accent); color:var(--accent-deep); }
+  .flow-arrow{ color:var(--ink-soft); flex-shrink:0; }
+  .case-metric-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding-top:18px; margin-top:18px; border-top:1px solid var(--border);
+  }
+  .case-metric-row .big{ font-family:var(--mono); font-size:30px; color:var(--accent-deep); font-weight:500; }
+  .case-metric-row .small{ font-size:12.5px; color:var(--ink-soft); text-align:right; max-width:140px; }
+
+  @media (max-width: 860px){
+    .case{ grid-template-columns:1fr; padding:28px; }
+  }
+
+  /* ---------- Experience ---------- */
+  .timeline{ display:flex; flex-direction:column; }
+  .tl-item{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:28px;
+    padding:26px 0;
+    border-top:1px solid var(--border);
+  }
+  .tl-item:first-child{ border-top:1px solid var(--border); }
+  .tl-date{
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); padding-top:3px;
+  }
+  .tl-role{ font-size:16px; font-weight:600; margin:0 0 4px; }
+  .tl-org{ font-size:14px; color:var(--accent-deep); margin:0 0 12px; }
+  .tl-desc{ font-size:14px; color:var(--ink-soft); line-height:1.7; margin:0; }
+  .tl-desc + .tl-desc{ margin-top:6px; }
+
+  @media (max-width: 640px){
+    .tl-item{ grid-template-columns:1fr; gap:6px; }
+  }
+
+  /* ---------- Certifications ---------- */
+  .certs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    perspective: 1000px;
+  }
+  .cert-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition: border-color .2s ease, transform .1s ease-out;
+    cursor:pointer;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .cert-card:hover{ border-color:var(--accent); }
+
+  .cert-thumb{
+    position:relative;
+    aspect-ratio: 16/11;
+    background:var(--bg-alt);
+    overflow:hidden;
+    border-bottom:1px solid var(--border);
+  }
+  .cert-thumb img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+    display:block;
+    transition: transform .4s ease;
+  }
+  .cert-card:hover .cert-thumb img{ transform:scale(1.04); }
+  .cert-thumb .zoom-hint{
+    position:absolute; top:10px; right:10px;
+    width:30px; height:30px; border-radius:50%;
+    background:rgba(10,14,20,0.55);
+    backdrop-filter: blur(4px);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; opacity:0; transition:opacity .2s ease;
+  }
+  .cert-card:hover .zoom-hint{ opacity:1; }
+  .cert-thumb .zoom-hint svg{ width:14px; height:14px; }
+
+  /* QuickBooks / no-image badge treatment */
+  .cert-badge-visual{
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(135deg, var(--accent-tint), var(--bg-alt));
+  }
+  .qb-mark{
+    width:64px; height:64px; border-radius:16px;
+    background:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:var(--serif); font-weight:600; font-size:22px;
+    box-shadow: var(--shadow);
+  }
+
+  .cert-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .cert-top{ display:flex; align-items:center; justify-content:space-between; }
+  .cert-badge{
+    font-family:var(--mono); font-size:10.5px;
+    padding:4px 9px; border-radius:999px;
+    background:var(--accent-tint); color:var(--accent-deep);
+  }
+  .cert-name{ font-size:14.5px; font-weight:600; line-height:1.35; }
+  .cert-issuer{ font-size:12.5px; color:var(--ink-soft); }
+  .cert-link{
+    font-size:12.5px; color:var(--accent-deep);
+    display:inline-flex; align-items:center; gap:4px;
+    margin-top:auto; padding-top:6px;
+  }
+  .cert-link svg{ width:12px; height:12px; }
+
+  @media (max-width: 860px){
+    .certs-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 560px){
+    .certs-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(6,10,16,0.82);
+    display:none;
+    align-items:center; justify-content:center;
+    padding:32px;
+    backdrop-filter: blur(3px);
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox-inner{
+    max-width:820px; max-height:88vh;
+    width:100%;
+    background:var(--surface);
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  }
+  .lightbox-inner img{
+    width:100%; max-height:80vh; object-fit:contain; display:block;
+    background:#fff;
+  }
+  .lightbox-close{
+    position:absolute; top:14px; right:14px;
+    width:36px; height:36px; border-radius:50%;
+    background:rgba(10,14,20,0.6);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; border:none;
+  }
+  .lightbox-close svg{ width:16px; height:16px; }
+
+  /* ---------- Skills strip ---------- */
+  .skills-wrap{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .skill-pill{
+    font-size:13px; padding:9px 16px;
+    border:1px solid var(--border); border-radius:999px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-band{
+    background:var(--ink);
+    color:var(--bg);
+    border-radius:24px;
+    padding:60px 48px;
+    text-align:center;
+  }
+  html[data-theme="dark"] .contact-band{ background:var(--surface); border:1px solid var(--border); }
+  .contact-band .kicker{ color:var(--accent); position:relative; z-index:1; }
+  .contact-band h2{ color:var(--bg); position:relative; z-index:1; }
+  html[data-theme="dark"] .contact-band h2{ color:var(--ink); }
+  .contact-band p{ color:#C7CDD4; max-width:480px; margin:0 auto 30px; font-size:15px; line-height:1.6; position:relative; z-index:1; }
+  html[data-theme="dark"] .contact-band p{ color:var(--ink-soft); }
+  .contact-cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .contact-band .btn-primary{ background:var(--accent); color:#08130F; }
+  .contact-band .btn-ghost{ border-color:#3C5068; color:var(--bg); }
+  html[data-theme="dark"] .contact-band .btn-ghost{ border-color:var(--border); color:var(--ink); }
+
+  footer{
+    padding:40px 0 60px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:13px; color:var(--ink-soft);
+    flex-wrap:wrap; gap:12px;
+  }
+  .footer-links{ display:flex; gap:20px; }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0; transform:translateY(18px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+<div style="position:fixed;top:70px;left:14px;background:#FF3366;color:#fff;padding:10px 18px;border-radius:8px;font-family:monospace;font-size:13px;z-index:999999;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.4);">GLOW-FIX-V11 — if you see this, you have the latest file</div>
+
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Lyra Jane<span class="dot">.</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-primary">Let's talk</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="bg-dotgrid panel cursor-glow-zone">
+  <div class="cursor-glow"></div>
+  <div class="wrap">
+  <section class="hero hero-centered">
+    <div class="monogram-scene monogram-scene-lg" id="monogramScene">
+      <div class="monogram-cube" id="monogramCube">
+        <img src="assets/lj-logo-3d.png" alt="LJ monogram logo" />
+      </div>
+    </div>
+    <div class="eyebrow"><span class="pulse"></span>Available for remote engagements</div>
+    <h1>Books that balance.<br>Payroll that's <em>on time</em>.</h1>
+    <p class="hero-sub hero-sub-centered">I'm a Xero Certified Professional and QuickBooks-certified bookkeeper with 4+ years recording payroll data, reconciling accounts, and building automation that turns multi-day processes into a couple of hours.</p>
+    <div class="hero-cta hero-cta-centered">
+      <a href="#contact" class="btn btn-primary">Start a project</a>
+      <a href="#work" class="btn btn-ghost">See how I work</a>
+    </div>
+    <div class="hero-tags hero-tags-centered">
+      <span class="tag">Xero Certified Pro L2</span>
+      <span class="tag">QuickBooks Certified L2</span>
+      <span class="tag">Google Apps Script</span>
+      <span class="tag">Payroll Data Recording</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="reveal">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">3,500+</div>
+        <div class="stat-label">Employees' payroll data recorded across multiple client sites</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Bank accounts reconciled weekly in Xero</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">650+</div>
+        <div class="stat-label">Employee workforce covered in BIR statutory filings</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4 yrs</div>
+        <div class="stat-label">Experience across manufacturing, cooperative &amp; outsourcing environments</div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <!-- ABOUT / INTRO -->
+  <div class="bg-diagonal panel">
+  <div class="wrap">
+  <section class="reveal about-section">
+    <div class="about-photo-wrap">
+      <div class="about-photo">
+        <img src="assets/headshot-transparent.png" alt="Lyra Jane Sapungan" />
+      </div>
+    </div>
+    <div class="about-copy">
+      <div class="about-eyebrow">WHO I AM</div>
+      <h2>Hi, I'm Lyra.</h2>
+      <p class="section-desc" style="max-width:520px;">A bookkeeper and accounting associate based in Laguna, Philippines. I specialize in payroll data recording, weekly bank reconciliation, and building automation that takes the busywork out of month-end close — so the numbers are always ready before you need them.</p>
+      <p class="section-desc" style="max-width:520px;">Certified in Xero and QuickBooks, with hands-on experience across manufacturing, cooperative, and outsourcing environments — and a habit of building the tool when the manual process gets in the way.</p>
+      <div class="about-signoff">
+        <span class="about-signoff-mark">Lyra Jane</span>
+        <span class="about-signoff-role">Bookkeeper &amp; Accounting Associate</span>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="bg-dotgrid panel">
+  <div class="wrap">
+  <section id="services" class="reveal">
+    <div class="section-head">
+      <div class="kicker">What I do</div>
+      <h2>Bookkeeping support that keeps you audit-ready</h2>
+      <p class="section-desc">Focused on the day-to-day accounting work that keeps a business's numbers accurate, current, and ready for review.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div>
+        <h3>Payroll data recording</h3>
+        <p>Consolidating multi-client, multi-site payroll registers into clean, upload-ready records — validated before it ever touches your books.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 3l4 4-4 4M3 7h18M7 21l-4-4 4-4M21 17H3"/></svg></div>
+        <h3>Bank reconciliation</h3>
+        <p>Weekly, multi-account reconciliation in Xero — catching discrepancies early so month-end close isn't a scramble.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
+        <h3>Statutory compliance</h3>
+        <p>SSS, PhilHealth, HDMF, and BIR filings prepared accurately and on schedule for your workforce.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Journal entries &amp; close support</h3>
+        <p>Xero-ready manual journals for reclassifications, accruals, and month-end adjustments — mapped and documented.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Process automation</h3>
+        <p>Custom Google Apps Script tools that consolidate, verify, and export — cutting manual work from days to hours.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>AP / AR support</h3>
+        <p>Invoice processing, vendor payments, collections follow-up, and supporting documentation — kept clean and traceable.</p>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <!-- CASE STUDY -->
+  <div class="bg-dark-glow panel on-dark cursor-glow-zone">
+  <div class="cursor-glow"></div>
+  <div class="wrap">
+  <section id="work" class="reveal">
+    <div class="section-head">
+      <div class="kicker">Featured build</div>
+      <h2>Project Atlas — payroll automation</h2>
+      <p class="section-desc">An internal Google Apps Script system built to solve a real bottleneck: consolidating payroll across multiple clients by hand.</p>
+    </div>
+    <div class="case">
+      <div class="case-copy">
+        <div class="kicker">Internal automation tool</div>
+        <h3>From days to hours, without losing accuracy</h3>
+        <p>Multi-client payroll registers used to take several days to consolidate, verify, and turn into journal entries. I built a Google Apps Script system that does all three — automatically.</p>
+        <ul class="case-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Consolidates payroll registers across multiple clients and sites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Verifies computations before they reach the books</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Generates Xero-ready journal entries automatically</li>
+        </ul>
+      </div>
+      <div class="case-visual">
+        <div class="flow-row">
+          <div class="flow-chip">Raw registers</div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="flow-chip active">Apps Script</div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="flow-chip">Xero CSV</div>
+        </div>
+        <div class="case-metric-row">
+          <div class="big">-85%</div>
+          <div class="small">Reduction in manual consolidation time, multi-day to 1&ndash;2 hours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="bg-dotgrid panel">
+  <div class="wrap">
+  <section id="experience" class="reveal">
+    <div class="section-head">
+      <div class="kicker">Track record</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Jul 2025 — Present</div>
+        <div>
+          <div class="tl-role">Accounting Associate</div>
+          <div class="tl-org">Expedise Management Solutions Inc.</div>
+          <p class="tl-desc">Recording payroll data for 3,500+ employees across multiple clients and sites, consolidating source data ahead of bulk upload via Xero.</p>
+          <p class="tl-desc">Reconciling 7 bank accounts weekly in Xero, and built a Google Apps Script automation for payroll, 13th Month Pay, and SIL accrual journal entries.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jun — Oct 2023</div>
+        <div>
+          <div class="tl-role">Freelance Accounting Assistant (VA, Part-time)</div>
+          <div class="tl-org">Vesper Bookkeeping &amp; Accounting Services</div>
+          <p class="tl-desc">Recorded daily sales transactions for a US-based restaurant client in QuickBooks; processed vendor invoices via Dext and Saasant; prepared and filed BIR tax returns for local clients.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jan 2020 — Jun 2022</div>
+        <div>
+          <div class="tl-role">Accounting Assistant</div>
+          <div class="tl-org">Benny's Multipurpose Cooperative</div>
+          <p class="tl-desc">Processed accounts payable and receivable, prepared BIR alphalist and annual tax filings for a workforce of 650+ employees, and maintained supporting vouchers for audit trail accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="ledger-rule"></div>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="reveal">
+    <div class="section-head">
+      <div class="kicker">Verified credentials</div>
+      <h2>Certifications</h2>
+      <p class="section-desc">Formally trained and certified across the platforms and tax jurisdictions I work in.</p>
+    </div>
+    <div class="certs-grid">
+
+      <div class="cert-card" tabindex="0" role="button" onclick="openLightbox('assets/cert_xero_l2.png')">
+        <div class="cert-thumb">
+          <img src="assets/cert_xero_l2.png" alt="Xero Certified Professional Level 2 certificate" loading="lazy" />
+          <div class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-top"><span class="cert-badge">Xero</span></div>
+          <div class="cert-name">Xero Certified Professional — Level 2</div>
+          <div class="cert-issuer">Xero · Jan 2026 · Valid to Jan 2027</div>
+          <a href="https://learning.central.xero.com/student/award/y8hqX2u991GvWxNFJiVSiZMV" target="_blank" rel="noopener" class="cert-link" onclick="event.stopPropagation()">Verify online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="cert-card" tabindex="0" role="button" onclick="openLightbox('assets/cert_xero_l1.png')">
+        <div class="cert-thumb">
+          <img src="assets/cert_xero_l1.png" alt="Xero Certified Associate Level 1 certificate" loading="lazy" />
+          <div class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-top"><span class="cert-badge">Xero</span></div>
+          <div class="cert-name">Xero Certified Associate — Level 1</div>
+          <div class="cert-issuer">Xero · Jan 2026 · Valid to Jan 2027</div>
+          <a href="https://learning.central.xero.com/student/award/m2JR2QX52R1hGuk7FAmDuSEs" target="_blank" rel="noopener" class="cert-link" onclick="event.stopPropagation()">Verify online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="cert-card" tabindex="0" role="button" onclick="openLightbox('assets/qb_l2_badge.webp')">
+        <div class="cert-thumb">
+          <div class="cert-badge-visual"><img src="assets/qb_l2_badge.webp" alt="Intuit QuickBooks ProAdvisor Level 2 badge" style="width:auto;height:88%;object-fit:contain;" /></div>
+          <div class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-top"><span class="cert-badge">Intuit</span></div>
+          <div class="cert-name">QuickBooks Online Certification — Level 2</div>
+          <div class="cert-issuer">Intuit · via Credly</div>
+          <a href="https://www.credly.com/badges/df8e043c-4acf-4a6e-95d6-9c58a4906c9c" target="_blank" rel="noopener" class="cert-link" onclick="event.stopPropagation()">Verify on Credly <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="cert-card" tabindex="0" role="button" onclick="openLightbox('assets/cert_vapph.png')">
+        <div class="cert-thumb">
+          <img src="assets/cert_vapph.png" alt="VAPPH Bookkeeping Xero QuickBooks certificate" loading="lazy" />
+          <div class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-top"><span class="cert-badge">VAPPH</span></div>
+          <div class="cert-name">Bookkeeping, Xero &amp; QuickBooks — UK, US &amp; Dubai Taxation</div>
+          <div class="cert-issuer">Virtual Assistant Portal PH · Apr 2026</div>
+        </div>
+      </div>
+
+      <div class="cert-card" tabindex="0" role="button" onclick="openLightbox('assets/cert_ezacc.jpg')">
+        <div class="cert-thumb">
+          <img src="assets/cert_ezacc.jpg" alt="EZACC Training Center certificate" loading="lazy" />
+          <div class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-top"><span class="cert-badge">EZACC</span></div>
+          <div class="cert-name">Australian Taxation, Bookkeeping &amp; Payroll with Xero</div>
+          <div class="cert-issuer">EZACC Training Center · 15-hr course · Jan 2026</div>
+        </div>
+      </div>
+
+      <div class="cert-card" tabindex="0" role="button" onclick="openLightbox('assets/qb_l1_badge.webp')">
+        <div class="cert-thumb">
+          <div class="cert-badge-visual"><img src="assets/qb_l1_badge.webp" alt="Intuit QuickBooks ProAdvisor Level 1 badge" style="width:auto;height:88%;object-fit:contain;" /></div>
+          <div class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-top"><span class="cert-badge">Intuit</span></div>
+          <div class="cert-name">QuickBooks Online Certification — Level 1</div>
+          <div class="cert-issuer">Intuit · via Credly</div>
+          <a href="https://www.credly.com/badges/c4ede502-bd55-476e-b3fc-31adc6fb96e0" target="_blank" rel="noopener" class="cert-link" onclick="event.stopPropagation()">Verify on Credly <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="bg-dotgrid panel">
+  <div class="wrap">
+  <section class="reveal">
+    <div class="section-head">
+      <div class="kicker">Toolkit</div>
+      <h2>Skills &amp; tools</h2>
+    </div>
+    <div class="skills-wrap">
+      <span class="skill-pill">Xero</span>
+      <span class="skill-pill">QuickBooks Online</span>
+      <span class="skill-pill">Google Apps Script</span>
+      <span class="skill-pill">Advanced Excel &amp; Google Sheets</span>
+      <span class="skill-pill">Dext</span>
+      <span class="skill-pill">Saasant</span>
+      <span class="skill-pill">Bank Reconciliation</span>
+      <span class="skill-pill">Payroll Data Recording</span>
+      <span class="skill-pill">Journal Entries</span>
+      <span class="skill-pill">BIR &amp; Statutory Compliance</span>
+      <span class="skill-pill">Accounts Payable</span>
+      <span class="skill-pill">Accounts Receivable</span>
+      <span class="skill-pill">Month-End Close Support</span>
+      <span class="skill-pill">Invoice Processing</span>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="bg-dotgrid wrap panel">
+  <section id="contact" class="reveal">
+    <div class="contact-band cursor-glow-zone" style="overflow:hidden; position:relative;">
+      <div class="cursor-glow"></div>
+      <div class="kicker">Get in touch</div>
+      <h2>Let's get your books in order</h2>
+      <p>Available part-time, 20–30 hours a week, async-friendly with Philippine night-shift overlap. Reach out to talk about your bookkeeping or payroll needs.</p>
+      <div class="contact-cta" style="position:relative; z-index:1;">
+        <a href="mailto:ljxsapungan@gmail.com" class="btn btn-primary">Email me</a>
+        <a href="https://linkedin.com/in/ljsapungan" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <div class="wrap">
+  <footer>
+    <div>&copy; 2026 Lyra Jane Sapungan. Laguna, Philippines.</div>
+    <div class="footer-links">
+      <a href="mailto:ljxsapungan@gmail.com">ljxsapungan@gmail.com</a>
+      <a href="tel:+639815347257">+63 981 534 7257</a>
+    </div>
+  </footer>
+  </div>
+
+</main>
+
+<!-- Lightbox for cert previews -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Certificate preview" />
+  </div>
+</div>
+
+<script>
+  // Theme toggle with persistence
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  let stored = null;
+  try {
+    stored = localStorage.getItem('theme');
+  } catch (e) {
+    console.warn('localStorage unavailable (this is expected on file:// URLs in some browsers):', e.message);
+  }
+  const initial = stored || 'dark';
+  root.setAttribute('data-theme', initial);
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {
+      console.warn('localStorage unavailable, theme will not persist across reloads.');
+    }
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Cert lightbox
+  function openLightbox(src){
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e){
+    if(e.target.id === 'lightbox' || e.target.closest('.lightbox-close')){
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  });
+
+  // Cursor-following glow (dark/accent panels only)
+  const glowZones = document.querySelectorAll('.cursor-glow-zone');
+
+  // TEMP DIAGNOSTIC BADGE — shows live data about the glow system
+  const diagBadge = document.createElement('div');
+  diagBadge.style.cssText = 'position:fixed;bottom:10px;left:10px;background:#111;color:#3FCB9B;padding:12px 16px;border-radius:8px;font-family:monospace;font-size:12px;z-index:999999;border:1px solid #3FCB9B;line-height:1.6;max-width:340px;';
+  const hoverNoneMatch = window.matchMedia('(hover: none)').matches;
+  const hoverHoverMatch = window.matchMedia('(hover: hover)').matches;
+  const reducedMotionMatch = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  diagBadge.innerHTML = `Zones found: ${glowZones.length}<br>hover:none = ${hoverNoneMatch}<br>hover:hover = ${hoverHoverMatch}<br>reduced-motion = ${reducedMotionMatch}<br>Move mouse to test...`;
+  document.body.appendChild(diagBadge);
+
+  glowZones.forEach((zone, idx) => {
+    const glow = zone.querySelector('.cursor-glow');
+    if (!glow) return;
+    let moveCount = 0;
+    zone.addEventListener('mouseenter', () => {
+      glow.classList.add('js-active');
+    });
+    zone.addEventListener('mouseleave', () => {
+      glow.classList.remove('js-active');
+    });
+    zone.addEventListener('mousemove', (e) => {
+      moveCount++;
+      glow.classList.add('js-active');
+      const rect = zone.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      glow.style.transform = `translate(${x - glow.offsetWidth/2}px, ${y - glow.offsetHeight/2}px)`;
+      const computedOpacity = getComputedStyle(glow).opacity;
+      const glowRect = glow.getBoundingClientRect();
+      const glowBg = getComputedStyle(glow).backgroundImage;
+      diagBadge.innerHTML = `Zone ${idx} | moves: ${moveCount}<br>opacity: ${computedOpacity} | w:${glow.offsetWidth} h:${glow.offsetHeight}<br>screenRect: ${Math.round(glowRect.left)},${Math.round(glowRect.top)} ${Math.round(glowRect.width)}x${Math.round(glowRect.height)}<br>bg: ${glowBg.substring(0,50)}`;
+    });
+  });
+
+  // Keyboard activation for cert cards
+  document.querySelectorAll('.cert-card[role="button"]').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
+  // 3D tilt effect (hero photo + cert cards) — desktop hover only
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (!prefersReducedMotion && supportsHover) {
+    function applyTilt(el, maxTilt){
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateY = x * maxTilt;
+        const rotateX = -y * maxTilt;
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      });
+    }
+
+    const heroPhoto = document.querySelector('.hero-photo');
+    if (heroPhoto) applyTilt(heroPhoto, 8);
+
+    document.querySelectorAll('.cert-card').forEach(card => applyTilt(card, 6));
+
+    // Scroll-based parallax on Project Atlas visual
+    const caseVisual = document.querySelector('.case-visual');
+    if (caseVisual) {
+      window.addEventListener('scroll', () => {
+        const rect = caseVisual.getBoundingClientRect();
+        const vh = window.innerHeight;
+        if (rect.top < vh && rect.bottom > 0) {
+          const progress = (vh - rect.top) / (vh + rect.height);
+          const offset = (progress - 0.5) * 24;
+          caseVisual.style.transform = `translateY(${offset}px)`;
+        }
+      }, { passive: true });
+    }
+  }
+
+  // Scroll-linked tilt on the 3D monogram (bounded so the flat image never edges-on to zero width)
+  // NOTE: intentionally NOT gated behind prefersReducedMotion — this is a small, bounded tilt
+  // (max 60deg), not a spin/flash effect, so it's safe to keep even with reduced-motion preferences.
+  // The idle floating bob animation is separately disabled via the CSS media query above.
+  const monogramCube = document.getElementById('monogramCube');
+  if (monogramCube) {
+    let ticking = false;
+    function updateMonogramRotation(){
+      // Direct, fast-responding tilt tied to scroll position — no sine wave delay.
+      // Clamped to +/-60deg so it's always obviously visible within the first ~150px of scroll,
+      // and never approaches the 90deg zone where a flat image edges-on to invisible.
+      const rotateY = Math.max(-60, Math.min(60, window.scrollY * 0.4));
+      const rotateX = Math.max(-15, Math.min(15, window.scrollY * 0.08));
+      monogramCube.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateMonogramRotation);
+        ticking = true;
+      }
+    }, { passive: true });
+    // Run once immediately in case the page loads already scrolled (e.g. back-navigation)
+    updateMonogramRotation();
+  }
+</script>
+
+</body>
+</html>
