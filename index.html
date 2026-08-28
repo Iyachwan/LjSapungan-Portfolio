@@ -98,30 +98,9 @@
   .bg-dark-glow > *{ position:relative; z-index:1; }
 
   /* ---------- Cursor-following glow ---------- */
+  /* Element itself is created and fully inline-styled by JS at runtime (see script)
+     to avoid any dependency on CSS class application timing/specificity. */
   .cursor-glow-zone{ position:relative; }
-  .cursor-glow{
-    position:absolute;
-    top:0; left:0;
-    width:280px; height:280px;
-    border-radius:50%;
-    pointer-events:none;
-    background: radial-gradient(circle, rgba(29,158,117,0.35) 0%, rgba(29,158,117,0.12) 40%, rgba(29,158,117,0) 72%);
-    opacity:0;
-    transition: opacity .3s ease;
-    z-index:0;
-    will-change: transform;
-  }
-  html[data-theme="dark"] .cursor-glow{
-    background: radial-gradient(circle, rgba(63,203,155,0.45) 0%, rgba(63,203,155,0.15) 40%, rgba(63,203,155,0) 72%);
-    width:300px; height:300px;
-  }
-  .cursor-glow-zone:hover .cursor-glow{ opacity:1; }
-  @media (hover: none){
-    .cursor-glow{ display:none; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .cursor-glow{ display:none; }
-  }
 
   .on-dark{ --ink: #F2F2ED; --ink-soft:#A9AFB8; --border: #2A3340; }
   .on-dark .kicker{ color: var(--accent, #3FCB9B); }
@@ -825,7 +804,7 @@
 </style>
 </head>
 <body>
-<div style="position:fixed;top:70px;left:14px;background:#FF3366;color:#fff;padding:10px 18px;border-radius:8px;font-family:monospace;font-size:13px;z-index:999999;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.4);">GLOW-FIX-V11 — if you see this, you have the latest file</div>
+
 
 
 <header>
@@ -852,7 +831,6 @@
 
   <!-- HERO -->
   <div class="bg-dotgrid panel cursor-glow-zone">
-  <div class="cursor-glow"></div>
   <div class="wrap">
   <section class="hero hero-centered">
     <div class="monogram-scene monogram-scene-lg" id="monogramScene">
@@ -969,7 +947,6 @@
 
   <!-- CASE STUDY -->
   <div class="bg-dark-glow panel on-dark cursor-glow-zone">
-  <div class="cursor-glow"></div>
   <div class="wrap">
   <section id="work" class="reveal">
     <div class="section-head">
@@ -1170,7 +1147,6 @@
   <div class="bg-dotgrid wrap panel">
   <section id="contact" class="reveal">
     <div class="contact-band cursor-glow-zone" style="overflow:hidden; position:relative;">
-      <div class="cursor-glow"></div>
       <div class="kicker">Get in touch</div>
       <h2>Let's get your books in order</h2>
       <p>Available part-time, 20–30 hours a week, async-friendly with Philippine night-shift overlap. Reach out to talk about your bookkeeping or payroll needs.</p>
@@ -1256,40 +1232,39 @@
   });
 
   // Cursor-following glow (dark/accent panels only)
-  const glowZones = document.querySelectorAll('.cursor-glow-zone');
+  // Fully self-contained: creates one JS-owned glow element per zone, entirely
+  // inline-styled (no external class dependency) so there is no possibility of
+  // a CSS rule failing to apply or being overridden elsewhere in the stylesheet.
+  const glowCanUse = window.matchMedia('(hover: hover)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (glowCanUse) {
+    const glowZones = document.querySelectorAll('.cursor-glow-zone');
+    glowZones.forEach((zone) => {
+    const glow = document.createElement('div');
+    glow.setAttribute('aria-hidden', 'true');
+    glow.style.position = 'absolute';
+    glow.style.top = '0';
+    glow.style.left = '0';
+    glow.style.width = '300px';
+    glow.style.height = '300px';
+    glow.style.borderRadius = '50%';
+    glow.style.pointerEvents = 'none';
+    glow.style.background = 'radial-gradient(circle, rgba(63,203,155,0.22) 0%, rgba(63,203,155,0.08) 45%, rgba(63,203,155,0) 70%)';
+    glow.style.opacity = '0';
+    glow.style.transition = 'opacity 0.3s ease';
+    glow.style.zIndex = '0';
+    glow.style.transform = 'translate(-9999px, -9999px)';
+    zone.insertBefore(glow, zone.firstChild);
 
-  // TEMP DIAGNOSTIC BADGE — shows live data about the glow system
-  const diagBadge = document.createElement('div');
-  diagBadge.style.cssText = 'position:fixed;bottom:10px;left:10px;background:#111;color:#3FCB9B;padding:12px 16px;border-radius:8px;font-family:monospace;font-size:12px;z-index:999999;border:1px solid #3FCB9B;line-height:1.6;max-width:340px;';
-  const hoverNoneMatch = window.matchMedia('(hover: none)').matches;
-  const hoverHoverMatch = window.matchMedia('(hover: hover)').matches;
-  const reducedMotionMatch = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  diagBadge.innerHTML = `Zones found: ${glowZones.length}<br>hover:none = ${hoverNoneMatch}<br>hover:hover = ${hoverHoverMatch}<br>reduced-motion = ${reducedMotionMatch}<br>Move mouse to test...`;
-  document.body.appendChild(diagBadge);
-
-  glowZones.forEach((zone, idx) => {
-    const glow = zone.querySelector('.cursor-glow');
-    if (!glow) return;
-    let moveCount = 0;
-    zone.addEventListener('mouseenter', () => {
-      glow.classList.add('js-active');
-    });
-    zone.addEventListener('mouseleave', () => {
-      glow.classList.remove('js-active');
-    });
+    zone.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
+    zone.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
     zone.addEventListener('mousemove', (e) => {
-      moveCount++;
-      glow.classList.add('js-active');
       const rect = zone.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      glow.style.transform = `translate(${x - glow.offsetWidth/2}px, ${y - glow.offsetHeight/2}px)`;
-      const computedOpacity = getComputedStyle(glow).opacity;
-      const glowRect = glow.getBoundingClientRect();
-      const glowBg = getComputedStyle(glow).backgroundImage;
-      diagBadge.innerHTML = `Zone ${idx} | moves: ${moveCount}<br>opacity: ${computedOpacity} | w:${glow.offsetWidth} h:${glow.offsetHeight}<br>screenRect: ${Math.round(glowRect.left)},${Math.round(glowRect.top)} ${Math.round(glowRect.width)}x${Math.round(glowRect.height)}<br>bg: ${glowBg.substring(0,50)}`;
+      glow.style.transform = `translate(${x - 150}px, ${y - 150}px)`;
     });
-  });
+    });
+  }
 
   // Keyboard activation for cert cards
   document.querySelectorAll('.cert-card[role="button"]').forEach(card => {
