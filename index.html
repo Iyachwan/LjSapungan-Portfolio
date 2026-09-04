@@ -145,6 +145,12 @@
   a{ color:inherit; text-decoration:none; }
 
   .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+  @media (min-width: 1600px){
+    .wrap{ max-width:1360px; }
+  }
+  @media (min-width: 1920px){
+    .wrap{ max-width:1440px; }
+  }
 
   /* ---------- 3D monogram (image-based) ---------- */
   .monogram-scene{
@@ -208,6 +214,9 @@
     object-fit:contain;
     display:block;
   }
+  .brand-logo-dark{ display:none; }
+  html[data-theme="dark"] .brand-logo-light{ display:none; }
+  html[data-theme="dark"] .brand-logo-dark{ display:block; }
   .nav-links{
     display:flex; align-items:center; gap:28px;
     font-size:14.5px; color:var(--ink-soft);
@@ -620,6 +629,18 @@
   }
   @media (max-width: 480px){
     .role-kicker{ font-size:12px; letter-spacing:0.02em; }
+  }
+  .type-cursor{
+    display:inline-block;
+    margin-left:2px;
+    animation:typeCursorBlink 0.9s step-end infinite;
+  }
+  @keyframes typeCursorBlink{
+    0%, 49%{ opacity:1; }
+    50%, 100%{ opacity:0; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .type-cursor{ animation:none; opacity:1; }
   }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
@@ -1231,7 +1252,10 @@
 
 <header>
   <div class="wrap nav">
-    <div class="brand"><img src="assets/lj-full-logo.png" alt="Lyra Jane Sapungan" class="brand-logo" /></div>
+    <div class="brand">
+      <img src="assets/logo-ljs-navy.png" alt="LJS — Lyra Jane Sapungan" class="brand-logo brand-logo-light" />
+      <img src="assets/logo-ljs-white.png" alt="LJS — Lyra Jane Sapungan" class="brand-logo brand-logo-dark" />
+    </div>
     <nav class="nav-links">
       <a href="#top" id="navHome">Home</a>
       <a href="#work">Work</a>
@@ -1288,9 +1312,9 @@
   <div class="wrap">
   <section class="hero hero-split">
     <div class="hero-text">
-      <div class="role-kicker">BOOKKEEPER</div>
+      <div class="role-kicker"><span id="roleTypedText"></span><span class="type-cursor">|</span></div>
       <div class="eyebrow"><span class="pulse"></span>Available for remote projects &amp; ongoing support</div>
-      <h1>Accurate books,<br><strong>reconciled accounts,</strong><br><em>streamlined workflows.</em></h1>
+      <h1>Accurate books,<br><strong>reconciled accounts,</strong><br><em>smarter spreadsheets.</em></h1>
       <p class="hero-sub">I help businesses get and keep their books in order — whether that's cleaning up a backlog, catching up months of reconciliation, or handling the ongoing bookkeeping, payroll data, and automation that keeps everything current.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary">Work With Me</a>
@@ -1676,6 +1700,10 @@
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/apps-script.webp" alt="Google Apps Script" /></span><span>Google Apps Script</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/excel.png" alt="Excel" /></span><span>Excel</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-sheets.png" alt="Google Sheets" /></span><span>Google Sheets</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/drive.png" alt="Google Drive" /></span><span>Google Drive</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/calendar.png" alt="Google Calendar" /></span><span>Google Calendar</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/gmail.png" alt="Gmail" /></span><span>Gmail</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-meet.png" alt="Google Meet" /></span><span>Google Meet</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/dext.png" alt="Dext" /></span><span>Dext</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/saasant.png" alt="Saasant" /></span><span>Saasant</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/loom.png" alt="Loom" /></span><span>Loom</span></div>
@@ -1687,6 +1715,10 @@
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/apps-script.webp" alt="Google Apps Script" /></span><span>Google Apps Script</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/excel.png" alt="Excel" /></span><span>Excel</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-sheets.png" alt="Google Sheets" /></span><span>Google Sheets</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/drive.png" alt="Google Drive" /></span><span>Google Drive</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/calendar.png" alt="Google Calendar" /></span><span>Google Calendar</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/gmail.png" alt="Gmail" /></span><span>Gmail</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-meet.png" alt="Google Meet" /></span><span>Google Meet</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/dext.png" alt="Dext" /></span><span>Dext</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/saasant.png" alt="Saasant" /></span><span>Saasant</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/loom.png" alt="Loom" /></span><span>Loom</span></div>
@@ -2085,6 +2117,49 @@
     // no action needed — click handler re-checks isDesktop() each time.
   })();
 
+
+  // Typewriter effect for hero role-kicker — rotates through skill words
+  (function(){
+    const el = document.getElementById('roleTypedText');
+    if (!el) return;
+    const words = ['Bookkeeping', 'Bank Reconciliation', 'Financial Reporting', 'Spreadsheet Automation', 'Month-End Close'];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      el.textContent = words[0];
+      return;
+    }
+    let wordIndex = 0;
+    let charIndex = 0;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const holdDelay = 1400;
+    const gapDelay = 300;
+
+    function typeNext(){
+      const currentWord = words[wordIndex];
+      if (charIndex <= currentWord.length) {
+        el.textContent = currentWord.slice(0, charIndex);
+        charIndex++;
+        setTimeout(typeNext, typeSpeed);
+      } else {
+        setTimeout(deleteNext, holdDelay);
+      }
+    }
+
+    function deleteNext(){
+      const currentWord = words[wordIndex];
+      if (charIndex > 0) {
+        charIndex--;
+        el.textContent = currentWord.slice(0, charIndex);
+        setTimeout(deleteNext, deleteSpeed);
+      } else {
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeNext, gapDelay);
+      }
+    }
+
+    typeNext();
+  })();
 </script>
 
 </body>
