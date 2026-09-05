@@ -550,6 +550,11 @@
     .desk-scene-hero{ max-width:480px; }
   }
 
+  @media (max-width: 640px){
+    .hero{ padding:14px 0 32px; }
+    .hero-split{ gap:24px; }
+  }
+
   @media (max-width: 900px){
     .desk-scene-hero{ max-width:400px; margin:0 auto; overflow:visible; }
     .desk-card{
@@ -868,6 +873,11 @@
     .stat{ border-bottom:1px solid var(--border); }
     .stat:nth-child(2n){ border-right:none; }
   }
+  @media (max-width: 560px){
+    .stat{ padding:16px 14px; }
+    .stat-num{ font-size:20px; margin-bottom:2px; }
+    .stat-label{ font-size:12.5px; line-height:1.4; }
+  }
 
   /* ---------- Section shared ---------- */
   section{ padding:8px 0; }
@@ -918,6 +928,14 @@
 
   @media (max-width: 860px){
     .services-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 640px){
+    .services-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+    .service-card{ padding:18px 14px; }
+    .service-icon{ width:32px; height:32px; margin-bottom:12px; }
+    .service-icon svg{ width:16px; height:16px; }
+    .service-card h3{ font-size:15px; margin-bottom:6px; }
+    .service-card p{ font-size:13px; line-height:1.5; }
   }
 
   /* ---------- Project / Case study ---------- */
@@ -1090,7 +1108,12 @@
     .certs-grid{ grid-template-columns:1fr 1fr; }
   }
   @media (max-width: 560px){
-    .certs-grid{ grid-template-columns:1fr; }
+    .certs-grid{ grid-template-columns:1fr 1fr; gap:10px; }
+    .cert-body{ padding:10px 12px 12px; gap:5px; }
+    .cert-name{ font-size:13px; line-height:1.3; }
+    .cert-issuer{ font-size:11px; }
+    .cert-badge{ font-size:10px; padding:3px 7px; }
+    .cert-link{ font-size:12px; }
   }
 
   /* ---------- Lightbox ---------- */
@@ -1139,10 +1162,24 @@
     width:max-content;
     animation: tools-scroll 28s linear infinite;
   }
+  .tools-track-2{ display:none; }
   .tools-marquee:hover .tools-track{ animation-play-state: paused; }
   @keyframes tools-scroll{
     from{ transform:translateX(0); }
     to{ transform:translateX(-50%); }
+  }
+  @keyframes tools-scroll-reverse{
+    from{ transform:translateX(-50%); }
+    to{ transform:translateX(0); }
+  }
+  @media (max-width: 640px){
+    .tools-marquee{ display:flex; flex-direction:column; gap:10px; }
+    .tools-track-2{ display:flex; }
+    .tools-track{ animation-duration:42s; gap:10px; }
+    .tools-track-2{ animation: tools-scroll-reverse 48s linear infinite; }
+    .tool-card{ padding:10px 14px; gap:8px; }
+    .tool-badge{ width:22px; height:22px; }
+    .tool-card span{ font-size:12px; }
   }
   .tool-card{
     background:var(--surface);
@@ -1623,7 +1660,7 @@
       <h2>Tools I work with</h2>
     </div>
     <div class="tools-marquee">
-      <div class="tools-track">
+      <div class="tools-track tools-track-1">
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/xero.webp" alt="Xero" /></span><span>Xero</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/quickbooks.png" alt="QuickBooks Online" /></span><span>QuickBooks Online</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/apps-script.webp" alt="Google Apps Script" /></span><span>Google Apps Script</span></div>
@@ -1654,6 +1691,38 @@
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/chatgpt.png" alt="ChatGPT" /></span><span>ChatGPT</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/claude-icon.png" alt="Claude" /></span><span>Claude</span></div>
         <div class="tool-card"><span class="tool-badge"><img src="assets/tools/notebooklm.png" alt="NotebookLM" /></span><span>NotebookLM</span></div>
+      </div>
+      <div class="tools-track tools-track-2">
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/quickbooks.png" alt="QuickBooks Online" /></span><span>QuickBooks Online</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-sheets.png" alt="Google Sheets" /></span><span>Google Sheets</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/gmail.png" alt="Gmail" /></span><span>Gmail</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/saasant.png" alt="Saasant" /></span><span>Saasant</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/claude-icon.png" alt="Claude" /></span><span>Claude</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/xero.webp" alt="Xero" /></span><span>Xero</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/drive.png" alt="Google Drive" /></span><span>Google Drive</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-meet.png" alt="Google Meet" /></span><span>Google Meet</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/loom.png" alt="Loom" /></span><span>Loom</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/notebooklm.png" alt="NotebookLM" /></span><span>NotebookLM</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/apps-script.webp" alt="Google Apps Script" /></span><span>Google Apps Script</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/calendar.png" alt="Google Calendar" /></span><span>Google Calendar</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/dext.png" alt="Dext" /></span><span>Dext</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/chatgpt.png" alt="ChatGPT" /></span><span>ChatGPT</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/excel.png" alt="Excel" /></span><span>Excel</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/quickbooks.png" alt="QuickBooks Online" /></span><span>QuickBooks Online</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-sheets.png" alt="Google Sheets" /></span><span>Google Sheets</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/gmail.png" alt="Gmail" /></span><span>Gmail</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/saasant.png" alt="Saasant" /></span><span>Saasant</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/claude-icon.png" alt="Claude" /></span><span>Claude</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/xero.webp" alt="Xero" /></span><span>Xero</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/drive.png" alt="Google Drive" /></span><span>Google Drive</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/google-meet.png" alt="Google Meet" /></span><span>Google Meet</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/loom.png" alt="Loom" /></span><span>Loom</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/notebooklm.png" alt="NotebookLM" /></span><span>NotebookLM</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/apps-script.webp" alt="Google Apps Script" /></span><span>Google Apps Script</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/calendar.png" alt="Google Calendar" /></span><span>Google Calendar</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/dext.png" alt="Dext" /></span><span>Dext</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/chatgpt.png" alt="ChatGPT" /></span><span>ChatGPT</span></div>
+        <div class="tool-card"><span class="tool-badge"><img src="assets/tools/excel.png" alt="Excel" /></span><span>Excel</span></div>
       </div>
     </div>
   </section>
