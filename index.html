@@ -208,6 +208,13 @@
     display:flex; align-items:center;
     height:56px;
   }
+  @media (max-width: 900px){
+    .nav{ padding:12px 0; }
+    .brand{ height:34px; }
+  }
+  @media (max-width: 480px){
+    .brand{ height:28px; }
+  }
   .brand-logo{
     height:100%;
     width:auto;
@@ -539,83 +546,45 @@
     .hero-sub{ margin-left:auto; margin-right:auto; }
     .hero-cta{ justify-content:center; }
     .hero-tags{ justify-content:center; }
+    .hero{ padding:28px 0 40px; }
     .desk-scene-hero{ max-width:480px; }
   }
 
   @media (max-width: 900px){
-    .desk-scene-hero .desk-card{ display:none; }
+    .desk-scene-hero{ max-width:400px; margin:0 auto; overflow:visible; }
+    .desk-card{
+      padding:5px 9px;
+      gap:5px;
+      border-radius:999px;
+    }
+    .desk-card-icon{
+      width:18px; height:18px;
+      border-radius:5px;
+    }
+    .desk-card-icon svg{ width:10px; height:10px; }
+    .desk-card-title{
+      font-size:9.5px;
+      letter-spacing:-0.01em;
+    }
+    .card-report{ top:0%; left:10%; }
+    .card-bank{ top:20%; left:-2%; }
+    .card-excel{ top:68%; left:0%; }
+    .card-xero{ top:4%; right:-2%; }
+    .card-qb{ top:50%; right:-4%; }
+    .card-script{ top:82%; right:4%; }
   }
 
-  /* Mobile: stacked list of full-detail cards below the image */
-  .desk-scene-labels-mobile{ display:none; }
-  @media (max-width: 900px){
-    .desk-scene-hero{ max-width:340px; }
-    .desk-scene-labels-mobile{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      max-width:520px;
-      margin:20px auto 28px;
-      opacity:0;
-      transform:scale(0.98);
-      transition: opacity .6s cubic-bezier(0.23, 1, 0.32, 1), transform .6s cubic-bezier(0.23, 1, 0.32, 1);
-      transition-delay: .35s;
-    }
-    .desk-scene-hero.in ~ .desk-scene-labels-mobile{
-      opacity:1;
-      transform:scale(1);
-    }
-    .desk-scene-labels-mobile .desk-card{
-      display:flex;
-      position:static;
-      opacity:1;
-      transform:none;
-      transition:none;
-      width:100%;
-      max-width:none;
-      border-radius:14px;
-      padding:14px 16px;
-      align-items:flex-start;
-    }
-    .desk-scene-labels-mobile .desk-card-icon{
-      width:36px; height:36px;
-      border-radius:9px;
-    }
-    .desk-scene-labels-mobile .desk-card-icon svg{ width:20px; height:20px; }
-    .desk-scene-labels-mobile .desk-card-title{
-      font-size:14.5px;
-      white-space:normal;
-      margin-bottom:3px;
-    }
-    .desk-scene-labels-mobile .desk-card-desc{
-      display:block;
-      font-size:13px; line-height:1.5;
-      color:var(--ink-soft);
-    }
+  @media (max-width: 480px){
+    .desk-scene-hero{ max-width:320px; }
+    .desk-card{ padding:4px 7px; gap:4px; }
+    .desk-card-icon{ width:15px; height:15px; }
+    .desk-card-icon svg{ width:8px; height:8px; }
+    .desk-card-title{ font-size:8px; }
   }
-  @media (max-width: 560px){
-    /* Small phones: compress each label into a compact chip — icon + title only,
-       no description. This keeps the 2-column grid instead of collapsing to a long
-       single-column stack of tall cards, which read as repetitive and heavy. */
-    .desk-scene-labels-mobile{ grid-template-columns: 1fr 1fr; gap:8px; }
-    .desk-scene-labels-mobile .desk-card{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:8px;
-      padding:12px 12px;
-      border-radius:12px;
-    }
-    .desk-scene-labels-mobile .desk-card-icon{
-      width:30px; height:30px;
-      border-radius:8px;
-    }
-    .desk-scene-labels-mobile .desk-card-icon svg{ width:16px; height:16px; }
-    .desk-scene-labels-mobile .desk-card-title{
-      font-size:12.5px;
-      line-height:1.3;
-    }
-    .desk-scene-labels-mobile .desk-card-desc{ display:none; }
-  }
+
+  /* Mobile floating badges now reuse .desk-card directly (see max-width:900px block above) */
+  .desk-scene-labels-mobile{ display:none !important; }
+
   @media (prefers-reduced-motion: reduce){
     .desk-scene-img-wrap, .desk-card, .desk-scene-labels-mobile{
       transition-duration:180ms !important;
@@ -671,6 +640,10 @@
   }
   h1 strong{
     font-weight:700; color:var(--accent-headline);
+  }
+  @media (max-width: 480px){
+    h1{ font-size:clamp(30px, 8.2vw, 38px); }
+    h1 strong{ white-space:nowrap; }
   }
 
   .hero-sub{
@@ -1364,50 +1337,6 @@
         <span class="desk-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6L2 12l6 6M16 6l6 6-6 6"/></svg></span>
         <span class="desk-card-body">
           <span class="desk-card-title">Apps Script Automation</span>
-        </span>
-      </div>
-    </div>
-    <div class="desk-scene-labels-mobile">
-      <div class="desk-card" style="--card-accent:#F0A73C">
-        <span class="desk-card-icon" style="--card-accent:#F0A73C;color:#F0A73C"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v5h5"/><path d="M9 15v3M12 13v5M15 11v7"/></svg></span>
-        <span class="desk-card-body">
-          <span class="desk-card-title">FINANCIAL REPORT PREPARATION</span>
-          <span class="desk-card-desc">Prepare accurate reports for better business insights.</span>
-        </span>
-      </div>
-      <div class="desk-card" style="--card-accent:#3FB876">
-        <span class="desk-card-icon" style="--card-accent:#3FB876;color:#3FB876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10M20 21V10M2 10l10-6 10 6M6 10v6M10 10v6M14 10v6M18 10v6"/></svg></span>
-        <span class="desk-card-body">
-          <span class="desk-card-title">BANK RECONCILIATION</span>
-          <span class="desk-card-desc">Reconcile bank and credit accounts for accuracy you can trust.</span>
-        </span>
-      </div>
-      <div class="desk-card" style="--card-accent:#3FB876">
-        <span class="desk-card-icon" style="--card-accent:#3FB876;color:#3FB876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v5h5"/><path d="M8 13h8M8 17h8M8 9h2"/></svg></span>
-        <span class="desk-card-body">
-          <span class="desk-card-title">EXCEL / GOOGLE SHEETS</span>
-          <span class="desk-card-desc">Clean data. Organized. Ready for action.</span>
-        </span>
-      </div>
-      <div class="desk-card" style="--card-accent:#3B9EE8">
-        <span class="desk-card-icon" style="--card-accent:#3B9EE8;color:#3B9EE8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span>
-        <span class="desk-card-body">
-          <span class="desk-card-title">XERO</span>
-          <span class="desk-card-desc">Bank recs, journal entries, and payroll data recording — day to day.</span>
-        </span>
-      </div>
-      <div class="desk-card" style="--card-accent:#3FB876">
-        <span class="desk-card-icon" style="--card-accent:#3FB876;color:#3FB876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 0 1 0 5h-1a2.5 2.5 0 0 0 0 5h1a2.5 2.5 0 0 0 2.5-2.5"/></svg></span>
-        <span class="desk-card-body">
-          <span class="desk-card-title">QUICKBOOKS ONLINE</span>
-          <span class="desk-card-desc">Transaction recording, cleanup, and vendor invoice imports.</span>
-        </span>
-      </div>
-      <div class="desk-card" style="--card-accent:#9B7FE8">
-        <span class="desk-card-icon" style="--card-accent:#9B7FE8;color:#9B7FE8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6L2 12l6 6M16 6l6 6-6 6"/></svg></span>
-        <span class="desk-card-body">
-          <span class="desk-card-title">GOOGLE APPS SCRIPT AUTOMATION</span>
-          <span class="desk-card-desc">Automate repetitive tasks and streamline your bookkeeping workflow.</span>
         </span>
       </div>
     </div>
